@@ -63,8 +63,8 @@ if [ -n "$STUDIO_JDK" -a -x "$STUDIO_JDK/bin/java" ]; then
   JDK="$STUDIO_JDK"
 fi
 
-if [ -z "$JDK" -a -s "${XDG_CONFIG_HOME:-$HOME/.config}/Google/AndroidStudioPreview4.2/studio.jdk" ]; then
-  USER_JRE=`"$CAT" $HOME/.AndroidStudioPreview4.2/config/studio.jdk`
+if [ -z "$JDK" -a -s "${XDG_CONFIG_HOME:-$HOME/.config}/Google/AndroidStudio4.2.1/studio.jdk" ]; then
+  USER_JRE=`"$CAT" $HOME/.AndroidStudio4.2.1/config/studio.jdk`
   if [ ! -d "$USER_JRE" ]; then
     USER_JRE="$IDE_HOME/$USER_JRE"
   fi
@@ -156,7 +156,7 @@ fi
 VM_OPTIONS=""
 for VM_OPTIONS_FILE in \
     $IDE_BIN_HOME/studio$BITS.vmoptions \
-    ${XDG_CONFIG_HOME:-$HOME/.config}/Google/AndroidStudioPreview4.2/studio$BITS.vmoptions \
+    ${XDG_CONFIG_HOME:-$HOME/.config}/Google/AndroidStudio4.2.1/studio$BITS.vmoptions \
     $IDE_HOME.vmoptions \
     $STUDIO_VM_OPTIONS; do
   if [ -r "$VM_OPTIONS_FILE" ]; then
