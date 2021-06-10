@@ -37,6 +37,10 @@ RUN yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "build-tools;30.0.
     && yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "platforms;android-30" \
     && yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "sources;android-30" \
     && yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "system-images;android-30;google_apis;x86_64"
+    
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y git
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
