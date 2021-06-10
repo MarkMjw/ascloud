@@ -187,7 +187,7 @@ IFS="$(printf '\n\t')"
   ${VM_OPTIONS} \
   "-XX:ErrorFile=$HOME/java_error_in_STUDIO_%p.log" \
   "-XX:HeapDumpPath=$HOME/java_error_in_STUDIO.hprof" \
-  -Didea.paths.selector=AndroidStudioPreview4.2 \
+  -Didea.paths.selector=AndroidStudio4.2.1 \
   "-Djb.vmOptionsFile=$VM_OPTIONS_FILES" \
   ${IDE_PROPERTIES_PROPERTY} \
   -Didea.platform.prefix=AndroidStudio -Didea.jre.check=true \
