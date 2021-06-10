@@ -7,6 +7,7 @@ ENV PATH="${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOM
 
 RUN apt-get update \
     && apt-get install -y \
+        git \
         supervisor \
         libxext6 libxrender1 libxtst6 libfreetype6 libxi6 \
         python3 python3-pip \
@@ -37,10 +38,6 @@ RUN yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "build-tools;30.0.
     && yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "platforms;android-30" \
     && yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "sources;android-30" \
     && yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "system-images;android-30;google_apis;x86_64"
-    
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y git
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
